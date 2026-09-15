@@ -1,98 +1,68 @@
 type DfxLogoProps = {
-  /** Show the "DFX" wordmark next to the mark */
-  showWordmark?: boolean;
-  /** Pixel size of the mark (square) */
+  /** Height of the wordmark in px (letterform cap height scales from this) */
   size?: number;
+  /** Show the small tagline under the wordmark */
+  showTagline?: boolean;
   className?: string;
-  /** "onPrimary" swaps to a light-on-dark treatment for use over the brand panel */
-  variant?: "default" | "onPrimary";
 };
 
 /**
- * DFX lettermark logo.
+ * DFX lettermark.
  *
- * A faceted diamond-glyph mark set in a rounded square, paired with a refined
- * "DFX" wordmark. The mark references fine jewellery craft (a cut stone)
- * without leaning on literal gold — it inherits the brand accent token so it
- * adapts to light/dark and to the brand-panel treatment.
+ * A typographic wordmark: heavy geometric "DF", with the "X" split into a dark
+ * stroke and a champagne stroke that reads as a cut facet. Drawn as vector
+ * paths so it stays crisp at any size and never depends on a loaded webfont.
  */
-export function DfxLogo({
-  showWordmark = true,
-  size = 40,
-  className,
-  variant = "default",
-}: DfxLogoProps) {
-  const onPrimary = variant === "onPrimary";
-  const markFg = onPrimary ? "var(--primary-foreground)" : "var(--primary)";
-  const markStroke = onPrimary
-    ? "color-mix(in oklab, var(--primary-foreground) 55%, transparent)"
-    : "color-mix(in oklab, var(--primary) 60%, transparent)";
-  const facetLight = onPrimary
-    ? "color-mix(in oklab, var(--primary-foreground) 28%, transparent)"
-    : "color-mix(in oklab, var(--primary) 22%, transparent)";
-  const facetDark = onPrimary
-    ? "color-mix(in oklab, var(--primary-foreground) 12%, transparent)"
-    : "color-mix(in oklab, var(--primary) 10%, transparent)";
-
+export function DfxLogo({ size = 52, showTagline = true, className }: DfxLogoProps) {
   return (
-    <span className={`inline-flex items-center gap-2.5 ${className ?? ""}`}>
+    <span className={`inline-flex flex-col items-center ${className ?? ""}`}>
       <svg
-        width={size}
         height={size}
-        viewBox="0 0 48 48"
+        viewBox="0 0 268 76"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
+        role="img"
+        aria-label="DFX"
+        style={{ width: (size * 268) / 76 }}
       >
-        {/* rounded badge */}
-        <rect
-          x="1.5"
-          y="1.5"
-          width="45"
-          height="45"
-          rx="13"
-          fill={markFg}
-          fillOpacity={onPrimary ? "0.16" : "0.12"}
-          stroke={markFg}
-          strokeOpacity="0.35"
-          strokeWidth="1.4"
+        {/* D */}
+        <path
+          d="M4 6h30c19.9 0 33 13.6 33 32s-13.1 32-33 32H4V6Zm16 13.5v37h13c11 0 17.6-7.1 17.6-18.5S44 19.5 33 19.5H20Z"
+          fill="currentColor"
         />
-        {/* faceted diamond / "D" cut motif */}
-        <g transform="translate(24 24)">
-          {/* outer outline */}
-          <path
-            d="M0 -13 L13 -3 L0 13 L-13 -3 Z"
-            fill="none"
-            stroke={markFg}
-            strokeWidth="1.6"
-            strokeLinejoin="round"
-          />
-          {/* top facet */}
-          <path
-            d="M0 -13 L0 -3 L-13 -3 Z"
-            fill={facetLight}
-          />
-          <path d="M0 -13 L0 -3 L13 -3 Z" fill={facetDark} />
-          {/* crown line */}
-          <path
-            d="M-13 -3 L13 -3"
-            stroke={markStroke}
-            strokeWidth="1.1"
-            strokeLinecap="round"
-          />
-          {/* pavilion */}
-          <path d="M0 -3 L0 13 L-13 -3 Z" fill={facetDark} />
-          <path d="M0 -3 L0 13 L13 -3 Z" fill={facetLight} />
-          {/* center sparkle */}
-          <circle cx="0" cy="-3" r="1.6" fill={markFg} />
-        </g>
+        {/* F */}
+        <path
+          d="M78 6h47v13.6H94v13.2h27.5v13.4H94V70H78V6Z"
+          fill="currentColor"
+        />
+        {/* X — dark stroke */}
+        <path d="M133 6h19l40 64h-19L133 6Z" fill="currentColor" />
+        {/* X — champagne facet stroke */}
+        <path
+          d="M192 6h19l-40 64h-19L192 6Z"
+          fill="url(#dfx-facet)"
+        />
+        {/* trademark tick */}
+        <path
+          d="M216 8h13v3h-5v12h-3V11h-5V8Zm16 0h4l4 8 4-8h4v15h-3V13l-4 8h-2l-4-8v10h-3V8Z"
+          fill="currentColor"
+          opacity="0.55"
+        />
+        <defs>
+          <linearGradient id="dfx-facet" x1="152" y1="70" x2="211" y2="6" gradientUnits="userSpaceOnUse">
+            <stop stopColor="var(--gold-deep)" />
+            <stop offset="0.55" stopColor="var(--gold)" />
+            <stop offset="1" stopColor="var(--gold-light)" />
+          </linearGradient>
+        </defs>
       </svg>
-      {showWordmark ? (
+
+      {showTagline ? (
         <span
-          className="font-display font-semibold tracking-[0.14em] text-foreground"
-          style={{ fontSize: size * 0.5 }}
+          className="mt-3 text-[0.6rem] font-medium uppercase text-foreground/60"
+          style={{ letterSpacing: "0.32em" }}
         >
-          DFX
+          Jewellery Business Software
         </span>
       ) : null}
     </span>
