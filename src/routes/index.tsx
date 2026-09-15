@@ -34,7 +34,7 @@ function Index() {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   function validate() {
-    const next: { email?: string; password?: string } = {};
+    const next: { email?: string | undefined; password?: string | undefined } = {};
     if (!email.trim()) {
       next.email = "Email is required";
     } else if (!emailRegex.test(email.trim())) {
