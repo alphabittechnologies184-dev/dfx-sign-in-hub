@@ -1,4 +1,5 @@
 # DFX login roadmap
 
-- [x] Initial login page (split layout)
-- [ ] Redesign: centred login card, richer background scene, refined DFX wordmark logo (per uploaded reference)
+- [x] Initial login page
+- [x] Redesign: centred card, jewellery background scene, corner brand marks
+- [x] Refined DFX lettermark (vector, faceted gold X) + site favicon
