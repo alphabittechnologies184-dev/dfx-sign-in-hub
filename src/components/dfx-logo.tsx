@@ -49,7 +49,7 @@ export function DfxLogo({ size = 52, showTagline = true, className }: DfxLogoPro
         />
         {/* trademark */}
         <path
-          d="M232 10h12v3.2h-4.4V25h-3.3V13.2H240V10Zm7 0h4.1l3.7 7.6 3.7-7.6h4.1v15h-3.1V15.6l-3.5 7.2h-2.4l-3.5-7.2V25H255V10Z"
+          d="M228 10h12v3.2h-4.35V25h-3.3V13.2H228V10Zm15 0h4.1l3.7 7.6 3.7-7.6h4.1v15h-3.1V15.6l-3.5 7.2h-2.4l-3.5-7.2V25H243V10Z"
           fill="currentColor"
           opacity="0.5"
         />
