@@ -158,6 +158,9 @@
   --sidebar-accent-foreground: oklch(0.965 0.006 75);
   --sidebar-border: oklch(0.5 0.012 60 / 22%);
   --sidebar-ring: oklch(0.74 0.075 65);
+  --gold: oklch(0.78 0.085 76);
+  --gold-light: oklch(0.89 0.055 84);
+  --gold-deep: oklch(0.62 0.08 64);
 }
 
 @layer base {
