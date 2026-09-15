@@ -37,10 +37,10 @@ export function DfxLogo({ size = 52, showTagline = true, className }: DfxLogoPro
           fill="currentColor"
         />
         {/* X — falling stroke (dark) */}
-        <path d="M146 8h20.5l43 64H189L146 8Z" fill="currentColor" />
+        <path d="M146 8h22l50 64h-22L146 8Z" fill="currentColor" />
         {/* X — rising stroke (champagne), separated by a hairline gap */}
         <path
-          d="M209.5 8H230l-43 64h-20.5L209.5 8Z"
+          d="M196 8h22l-50 64h-22L196 8Z"
           fill="url(#dfx-facet)"
           stroke="var(--card)"
           strokeWidth="4.5"
@@ -49,7 +49,7 @@ export function DfxLogo({ size = 52, showTagline = true, className }: DfxLogoPro
         />
         {/* trademark */}
         <path
-          d="M240 10h12v3.2h-4.4V25h-3.3V13.2H240V10Zm15 0h4.1l3.7 7.6 3.7-7.6h4.1v15h-3.1V15.6l-3.5 7.2h-2.4l-3.5-7.2V25H255V10Z"
+          d="M232 10h12v3.2h-4.4V25h-3.3V13.2H240V10Zm7 0h4.1l3.7 7.6 3.7-7.6h4.1v15h-3.1V15.6l-3.5 7.2h-2.4l-3.5-7.2V25H255V10Z"
           fill="currentColor"
           opacity="0.5"
         />
