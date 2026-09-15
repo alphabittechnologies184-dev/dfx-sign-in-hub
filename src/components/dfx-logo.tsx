@@ -18,12 +18,12 @@ export function DfxLogo({ size = 52, showTagline = true, className }: DfxLogoPro
     <span className={`inline-flex flex-col items-center ${className ?? ""}`}>
       <svg
         height={size}
-        viewBox="0 0 268 76"
+        viewBox="0 0 286 76"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         role="img"
         aria-label="DFX"
-        style={{ width: (size * 268) / 76 }}
+        style={{ width: (size * 286) / 76 }}
       >
         {/* D */}
         <path
@@ -36,20 +36,20 @@ export function DfxLogo({ size = 52, showTagline = true, className }: DfxLogoPro
           fill="currentColor"
         />
         {/* X — dark stroke */}
-        <path d="M133 6h19l40 64h-19L133 6Z" fill="currentColor" />
+        <path d="M141 6h20l41 64h-20L141 6Z" fill="currentColor" />
         {/* X — champagne facet stroke */}
         <path
-          d="M192 6h19l-40 64h-19L192 6Z"
+          d="M202 6h20l-41 64h-20L202 6Z"
           fill="url(#dfx-facet)"
         />
         {/* trademark tick */}
         <path
-          d="M216 8h13v3h-5v12h-3V11h-5V8Zm16 0h4l4 8 4-8h4v15h-3V13l-4 8h-2l-4-8v10h-3V8Z"
+          d="M230 8h13v3h-5v12h-3V11h-5V8Zm16 0h4l4 8 4-8h4v15h-3V13l-4 8h-2l-4-8v10h-3V8Z"
           fill="currentColor"
           opacity="0.55"
         />
         <defs>
-          <linearGradient id="dfx-facet" x1="152" y1="70" x2="211" y2="6" gradientUnits="userSpaceOnUse">
+          <linearGradient id="dfx-facet" x1="161" y1="70" x2="222" y2="6" gradientUnits="userSpaceOnUse">
             <stop stopColor="var(--gold-deep)" />
             <stop offset="0.55" stopColor="var(--gold)" />
             <stop offset="1" stopColor="var(--gold-light)" />
